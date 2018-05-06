@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   readonly client_id = '101136761905-kfc45eum300aueiqeakcq45qjnr5m95i.apps.googleusercontent.com';
   readonly response_type = 'token';
   readonly scope = 'https://www.googleapis.com/auth/books';
-  readonly redirect_uri = 'http://localhost:4200';
+  readonly redirect_uri = 'http://localhost:4200/save-token';
 
   loginUrl: String;
 
@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
                     ?client_id=${this.client_id}
                     &response_type=${this.response_type}
                     &scope=${this.scope}
-                    &redirect_uri=${this.redirect_uri}`;
+                    &redirect_uri=${this.redirect_uri}`
+                    .replace(/ /g, '');
   }
 
 }
