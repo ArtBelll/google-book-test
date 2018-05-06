@@ -10,21 +10,27 @@ import {HttpClientModule} from '@angular/common/http';
 import {SaveTokenComponent} from './components/save-token/save-token.component';
 import {CookieModule} from 'ngx-cookie';
 import {TokenService} from './services/token.service';
+import {UserComponent} from './components/user/user.component';
+import {TokenGuard} from './guards/token.guard';
+import {MainComponent} from './components/main/main.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     AppRootComponent,
-    SaveTokenComponent
+    SaveTokenComponent,
+    UserComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    CookieModule.forRoot()
+    CookieModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [
+    TokenGuard,
     LoginService,
     TokenService
   ],

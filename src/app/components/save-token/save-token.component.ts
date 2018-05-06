@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {TokenService} from "../../services/token.service";
 
 @Component({
@@ -11,7 +11,9 @@ export class SaveTokenComponent implements OnInit {
 
 
 
-  constructor(private route: ActivatedRoute, private tokenService: TokenService) {
+  constructor(private route: ActivatedRoute,
+              private tokenService: TokenService,
+              private router: Router) {
 
   }
 
@@ -20,7 +22,12 @@ export class SaveTokenComponent implements OnInit {
     this.route.fragment.subscribe(params => {
       params.replace(/([^=&]+)=([^&]*)/g, (m, key, value) => fragments[key] = value);
     });
-    this.tokenService.saveToken(fragments['access_token']);
+    if (fragments.hasOwnProperty('error')) {
+      this.router.navigate(['/login']);
+    } else {
+      this.tokenService.saveToken(fragments['access_token'])
+      this.router.navigate(['/user/main']);
+    }
   }
 
 }
