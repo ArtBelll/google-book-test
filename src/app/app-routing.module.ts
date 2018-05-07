@@ -23,6 +23,7 @@ const routes: Routes = [
   {
     path: 'user',
     canActivate: [TokenGuard],
+    component: UserComponent,
     children: [
       {
         path: '',
