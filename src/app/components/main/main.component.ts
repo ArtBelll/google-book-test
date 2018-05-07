@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ShelfService} from "../../modules/shelf/services/shelf.service";
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private shelfService: ShelfService) { }
 
   ngOnInit() {
+    this.shelfService.getAllShelves()
+      .subscribe(shelves => console.log(shelves));
   }
 
 }
