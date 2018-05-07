@@ -1,11 +1,14 @@
-import {Observable} from "rxjs/Observable";
-import {NgModule, Pipe, PipeTransform} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
+import {Observable} from 'rxjs/Observable';
+import {NgModule, Pipe, PipeTransform} from '@angular/core';
+import {map} from 'rxjs/operators';
+
 
 @Pipe({name: 'asyncLimitTo'})
 export class AsyncLimitPipe implements PipeTransform {
   transform<T>(value: Observable<Array<T>>, size: number): Observable<Array<T>> {
-    return value.map(shelves => shelves.slice(0, size));
+    return value.pipe(
+      map(shelves => shelves.slice(0, size))
+    );
   }
 }
 
@@ -13,4 +16,4 @@ export class AsyncLimitPipe implements PipeTransform {
   declarations: [AsyncLimitPipe],
   exports: [AsyncLimitPipe]
 })
-export class AsyncLimitModule { };
+export class AsyncLimitModule { }

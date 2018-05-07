@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {SaveTokenComponent} from './components/save-token/save-token.component';
 import {AccountComponent} from './components/account/account.component';
 import {TokenGuard} from './guards/token.guard';
-import {WelcomComponent} from "./components/account/welcom/welcom.component";
+import {WelcomComponent} from './components/account/welcom/welcom.component';
 
 const routes: Routes = [
   {

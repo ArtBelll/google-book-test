@@ -1,7 +1,7 @@
 import {Component, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {Shelf} from '../../domian/shelf';
 import {ShelfService} from '../../services/shelf.service';
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-shelves-group',

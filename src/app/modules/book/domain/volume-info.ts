@@ -1,4 +1,4 @@
-import {ImageLinks} from "./image-link";
+import {ImageLinks} from './image-link';
 
 export class VolumeInfo {
   title: string;

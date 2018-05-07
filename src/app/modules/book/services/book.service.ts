@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {AbstractListResponse} from '../../../api/abstract-response';
 import {Book} from '../domain/book';
+import {map} from 'rxjs/operators';
 
 @Injectable()
 export class BookService {
@@ -12,6 +13,8 @@ export class BookService {
 
   public getRecommendedBooks(): Observable<Book[]> {
     return this.httpClient.get<AbstractListResponse<Book>>('volumes/recommended')
-      .map(response => response.items);
+      .pipe(
+        map((response: AbstractListResponse<Book>) => response.items)
+      );
   }
 }
