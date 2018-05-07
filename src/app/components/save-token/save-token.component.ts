@@ -26,7 +26,7 @@ export class SaveTokenComponent implements OnInit {
       this.router.navigate(['/login']);
     } else {
       this.tokenService.saveToken(fragments['access_token'])
-      this.router.navigate(['/user/main']);
+      this.router.navigate(['/account']);
     }
   }
 

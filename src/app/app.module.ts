@@ -1,5 +1,4 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 
 import {LoginComponent} from './components/login/login.component';
@@ -10,12 +9,12 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {SaveTokenComponent} from './components/save-token/save-token.component';
 import {CookieModule} from 'ngx-cookie';
 import {TokenService} from './services/token.service';
-import {UserComponent} from './components/user/user.component';
+import {AccountComponent} from './components/account/account.component';
 import {TokenGuard} from './guards/token.guard';
-import {MainComponent} from './components/main/main.component';
 import {APIInterceptor} from './api-interceptor';
 import {ShelfModule} from './modules/shelf/shelf.module';
-import {AsyncLimitPipe} from "./pipes/async-limit-pipe";
+import {NgModule} from '@angular/core';
+import { WelcomComponent } from './components/account/welcom/welcom.component';
 
 
 @NgModule({
@@ -23,8 +22,8 @@ import {AsyncLimitPipe} from "./pipes/async-limit-pipe";
     LoginComponent,
     AppRootComponent,
     SaveTokenComponent,
-    UserComponent,
-    MainComponent
+    AccountComponent,
+    WelcomComponent
   ],
   imports: [
     BrowserModule,

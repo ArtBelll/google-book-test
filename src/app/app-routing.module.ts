@@ -2,18 +2,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './components/login/login.component';
 import {NgModule} from '@angular/core';
 import {SaveTokenComponent} from './components/save-token/save-token.component';
-import {UserComponent} from './components/user/user.component';
+import {AccountComponent} from './components/account/account.component';
 import {TokenGuard} from './guards/token.guard';
-import {MainComponent} from './components/main/main.component';
+import {WelcomComponent} from "./components/account/welcom/welcom.component";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'user',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
     component: LoginComponent
   },
   {
@@ -21,18 +16,13 @@ const routes: Routes = [
     component: SaveTokenComponent
   },
   {
-    path: 'user',
+    path: 'account',
     canActivate: [TokenGuard],
-    component: UserComponent,
+    component: AccountComponent,
     children: [
       {
         path: '',
-        redirectTo: 'main',
-        pathMatch: 'full'
-      },
-      {
-        path: 'main',
-        component: MainComponent
+        component: WelcomComponent
       }
     ]
   }
