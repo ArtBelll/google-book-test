@@ -3,16 +3,16 @@ import {CommonModule} from '@angular/common';
 import {ShelfService} from './services/shelf.service';
 import {ShelfComponent} from './components/shelf/shelf.component';
 import {ShelvesGroupComponent} from './components/shelves-group/shelves-group.component';
-import {AsyncLimitPipe} from '../../pipes/async-limit-pipe';
+import {AsyncLimitModule} from '../../pipes/async-limit-pipe';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AsyncLimitModule
   ],
   declarations: [
     ShelfComponent,
-    ShelvesGroupComponent,
-    AsyncLimitPipe
+    ShelvesGroupComponent
   ],
   providers: [
     ShelfService

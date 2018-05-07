@@ -1,5 +1,6 @@
+<h2>Shelves</h2>
 <ul class="list-group list-group-flush">
-  <li *ngFor="let shelf of shelves | asyncLimitTo:5 | async " class="list-group-item">
+  <li *ngFor="let shelf of shelves | asyncLimitTo:5 | async" class="list-group-item">
     <app-shelf [shelf]="shelf" ></app-shelf>
   </li>
 </ul>

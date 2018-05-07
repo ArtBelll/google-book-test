@@ -10,7 +10,6 @@ import 'rxjs/add/operator/do';
 export class APIInterceptor implements HttpInterceptor {
 
   readonly BASE_URL = 'https://www.googleapis.com/books/v1';
-  readonly KEY_API = 'AIzaSyBqH5FgK-sUvaQ-upEjJhu3idpto-pjn_s';
 
   constructor(private tokenService: TokenService, private router: Router) {
   }
@@ -28,6 +27,6 @@ export class APIInterceptor implements HttpInterceptor {
 
     return next.handle(request)
       .do(event => {
-      }, err => this.router.navigate(['/login']));
+      }, err => this.router.navigate(['']));
   }
 }

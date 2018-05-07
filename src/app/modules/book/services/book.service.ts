@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import {Shelf} from '../domian/shelf';
 import {AbstractListResponse} from '../../../api/abstract-response';
+import {Book} from '../domain/book';
 
 @Injectable()
-export class ShelfService {
+export class BookService {
 
   constructor(private httpClient: HttpClient) {
   }
 
-  public getAllShelves(): Observable<Shelf[]> {
-    return this.httpClient.get<AbstractListResponse<Shelf>>('mylibrary/bookshelves')
+  public getRecommendedBooks(): Observable<Book[]> {
+    return this.httpClient.get<AbstractListResponse<Book>>('volumes/recommended')
       .map(response => response.items);
   }
 }

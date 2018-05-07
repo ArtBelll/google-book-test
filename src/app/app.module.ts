@@ -15,6 +15,8 @@ import {APIInterceptor} from './api-interceptor';
 import {ShelfModule} from './modules/shelf/shelf.module';
 import {NgModule} from '@angular/core';
 import { WelcomComponent } from './components/account/welcom/welcom.component';
+import {BookModule} from "./modules/book/book.module";
+import {AsyncLimitPipe} from "./pipes/async-limit-pipe";
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { WelcomComponent } from './components/account/welcom/welcom.component';
     HttpClientModule,
     CookieModule.forRoot(),
     AppRoutingModule,
-    ShelfModule
+    ShelfModule,
+    BookModule
   ],
   providers: [
     {
