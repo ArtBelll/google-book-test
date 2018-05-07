@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 
 import {LoginComponent} from './components/login/login.component';
@@ -13,8 +13,9 @@ import {TokenService} from './services/token.service';
 import {UserComponent} from './components/user/user.component';
 import {TokenGuard} from './guards/token.guard';
 import {MainComponent} from './components/main/main.component';
-import {APIInterceptor} from "./api-interceptor";
-import {ShelfModule} from "./modules/shelf/shelf.module";
+import {APIInterceptor} from './api-interceptor';
+import {ShelfModule} from './modules/shelf/shelf.module';
+import {AsyncLimitPipe} from "./pipes/async-limit-pipe";
 
 
 @NgModule({
