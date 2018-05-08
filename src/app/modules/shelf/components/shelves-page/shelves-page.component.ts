@@ -10,6 +10,8 @@ import {ShelfService} from '../../services/shelf.service';
 export class ShelvesPageComponent implements OnInit {
 
   shelves: Shelf[];
+  itemsPerPage = 5;
+  currentPage = 1;
 
   constructor(private shelfService: ShelfService) { }
 

@@ -9,8 +9,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let shelf of shelves; let i = index">
-    <th>{{i + 1}}</th>
+  <tr *ngFor="let shelf of shelves | paginate: {itemsPerPage: itemsPerPage, currentPage: currentPage}; let i = index">
+    <th>{{itemsPerPage * (currentPage - 1) + i + 1}}</th>
     <td>{{shelf.title}}</td>
     <td class="volume">{{shelf.volumeCount}}</td>
     <td class="d-none d-sm-table-cell">{{shelf.updated | date:'short'}}</td>
@@ -18,3 +18,4 @@
   </tr>
   </tbody>
 </table>
+<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>

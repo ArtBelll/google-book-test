@@ -1,8 +1,13 @@
+.nav-wrapper {
+  margin-bottom: 30px;
+}
+
 a {
-  color: #343a40;
+  font-size: 22px;
+  color: #d0d0d0;
 }
 
 a.active {
-  color: #d0d0d0;
+  color: #000000;
   pointer-events: none;
 }
