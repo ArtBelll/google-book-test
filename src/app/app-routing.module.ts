@@ -5,10 +5,16 @@ import {SaveTokenComponent} from './components/save-token/save-token.component';
 import {AccountComponent} from './components/account/account.component';
 import {TokenGuard} from './guards/token.guard';
 import {WelcomComponent} from './components/account/welcom/welcom.component';
+import {ShelvesPageComponent} from "./modules/shelf/components/shelves-page/shelves-page.component";
 
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'account',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
     component: LoginComponent
   },
   {
@@ -23,6 +29,10 @@ const routes: Routes = [
       {
         path: '',
         component: WelcomComponent
+      },
+      {
+        path: 'shelves',
+        component: ShelvesPageComponent
       }
     ]
   }

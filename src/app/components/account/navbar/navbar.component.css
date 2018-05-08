@@ -1,0 +1,8 @@
+a {
+  color: #343a40;
+}
+
+a.active {
+  color: #d0d0d0;
+  pointer-events: none;
+}

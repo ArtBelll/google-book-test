@@ -16,6 +16,7 @@ import {ShelfModule} from './modules/shelf/shelf.module';
 import {NgModule} from '@angular/core';
 import { WelcomComponent } from './components/account/welcom/welcom.component';
 import {BookModule} from './modules/book/book.module';
+import { NavbarComponent } from './components/account/navbar/navbar.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {BookModule} from './modules/book/book.module';
     AppRootComponent,
     SaveTokenComponent,
     AccountComponent,
-    WelcomComponent
+    WelcomComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
