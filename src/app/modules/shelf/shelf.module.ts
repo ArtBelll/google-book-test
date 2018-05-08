@@ -6,14 +6,15 @@ import {ShelvesGroupComponent} from './components/shelves-group/shelves-group.co
 import {AsyncLimitModule} from '../../pipes/async-limit-pipe';
 import {ShelvesPageComponent} from './components/shelves-page/shelves-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     AsyncLimitModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ShelfComponent,
