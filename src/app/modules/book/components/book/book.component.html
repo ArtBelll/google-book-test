@@ -1,3 +1,6 @@
-<p>
-  {{book.volumeInfo.title}}
-</p>
+<img class="card-img-top" [src]="book.volumeInfo.imageLinks.thumbnail" alt="Card image cap">
+<div class="card-body">
+  <h5 class="card-title">{{book.volumeInfo.title}}</h5>
+  <p class="card-text">{{book.volumeInfo.authors}}</p>
+  <a [href]="book.volumeInfo.buyLink" class="btn btn-primary">Go buy</a>
+</div>
