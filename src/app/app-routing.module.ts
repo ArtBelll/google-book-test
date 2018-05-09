@@ -6,6 +6,7 @@ import {AccountComponent} from './components/account/account.component';
 import {TokenGuard} from './guards/token.guard';
 import {WelcomComponent} from './components/account/welcom/welcom.component';
 import {ShelvesPageComponent} from "./modules/shelf/components/shelves-page/shelves-page.component";
+import {ShelfViewComponent} from "./modules/shelf/components/shelf-view/shelf-view.component";
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'shelves',
         component: ShelvesPageComponent
+      },
+      {
+        path: 'shelf/:id',
+        component: ShelfViewComponent
       }
     ]
   }

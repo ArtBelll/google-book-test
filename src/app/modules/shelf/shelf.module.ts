@@ -8,6 +8,8 @@ import {ShelvesPageComponent} from './components/shelves-page/shelves-page.compo
 import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ShelfPreviewComponent } from './components/shelf-preview/shelf-preview.component';
+import { ShelfViewComponent } from './components/shelf-view/shelf-view.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
@@ -15,13 +17,15 @@ import { ShelfPreviewComponent } from './components/shelf-preview/shelf-preview.
     AsyncLimitModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   declarations: [
     ShelfComponent,
     ShelvesGroupComponent,
     ShelvesPageComponent,
-    ShelfPreviewComponent
+    ShelfPreviewComponent,
+    ShelfViewComponent
   ],
   providers: [
     ShelfService

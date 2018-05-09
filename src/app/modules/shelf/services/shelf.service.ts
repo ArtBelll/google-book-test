@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {Shelf} from '../domian/shelf';
-import {AbstractListResponse} from '../../../api/abstract-response';
+import {AbstractListResponse} from '../../../api/abstract-list-response';
 import {map} from 'rxjs/operators';
 
 @Injectable()
@@ -16,5 +16,9 @@ export class ShelfService {
       .pipe(
         map(response => response.items)
       );
+  }
+
+  public getShelves(id: number): Observable<Shelf> {
+    return this.httpClient.get<Shelf>(`mylibrary/bookshelves/${id}`);
   }
 }
