@@ -5,4 +5,5 @@ export class VolumeInfo {
   authors: string[];
   infoLink: string;
   buyLink: string;
+  imageLinks: ImageLinks;
 }

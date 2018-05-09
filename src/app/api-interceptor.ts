@@ -27,6 +27,10 @@ export class APIInterceptor implements HttpInterceptor {
 
     return next.handle(request)
       .do(event => {
-      }, err => this.router.navigate(['/login']));
+      }, err => {
+        if (err['error']['code'] === '401') {
+          this.router.navigate(['/login']);
+        }
+      });
   }
 }

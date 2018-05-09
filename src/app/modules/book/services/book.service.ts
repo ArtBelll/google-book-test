@@ -17,4 +17,23 @@ export class BookService {
         map((response: AbstractListResponse<Book>) => response.items)
       );
   }
+
+  public getBooksByShelfAndMax(shelfId: number, maxResults: number): Observable<Book[]> {
+    return this.httpClient.get<AbstractListResponse<Book>>(`mylibrary/bookshelves/${shelfId}/volumes`,
+      {
+        params: {
+          maxResults: maxResults.toString()
+        }
+      })
+      .pipe(
+        map((response: AbstractListResponse<Book>) => response.items)
+      );
+  }
+
+  public getBooksByShelf(shelfId: number): Observable<Book[]> {
+    return this.httpClient.get<AbstractListResponse<Book>>(`mylibrary/bookshelves/${shelfId}/volumes`)
+      .pipe(
+        map((response: AbstractListResponse<Book>) => response.items)
+      );
+  }
 }

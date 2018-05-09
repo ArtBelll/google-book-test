@@ -5,4 +5,5 @@ export class Shelf {
   selfLink: string;
   created: Date;
   updated: Date;
+  volumesLastUpdated: Date;
 }

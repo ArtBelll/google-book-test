@@ -1,0 +1,23 @@
+<div class="card">
+  <img class="card-img-top" *ngIf="bookImage" [src]="bookImage">
+  <div class="card-body">
+    <h5 class="card-title">{{shelf.title}}</h5>
+    <div class="card-text mb-3">
+      <div>
+        <b>Volume count: </b><span>{{shelf.volumeCount}}</span>
+      </div>
+      <div>
+        <b>Created: </b><span>{{shelf.created}}</span>
+      </div>
+      <div>
+        <b>Updated: </b><span>{{shelf.updated}}</span>
+      </div>
+      <div>
+        <b>Volumes last updated: </b><span>{{shelf.volumesLastUpdated}}</span>
+      </div>
+    </div>
+    <a href="#" class="btn btn-info">View</a>
+    <button class="btn btn-primary disabled">Edit</button>
+    <button class="btn btn-danger disabled">Delete</button>
+  </div>
+</div>

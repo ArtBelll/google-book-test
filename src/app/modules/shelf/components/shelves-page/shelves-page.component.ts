@@ -18,6 +18,9 @@ export class ShelvesPageComponent implements OnInit {
   searchTitle = new FormControl();
   countMoreThanEqual = new FormControl();
 
+  isPreviewOpen = false;
+  selectedShelf: Shelf;
+
   constructor(private shelfService: ShelfService) {
   }
 
@@ -27,6 +30,11 @@ export class ShelvesPageComponent implements OnInit {
         this.shelves = shelves;
         this.setUpFilterManager();
       });
+  }
+
+  openPreview(shelf: Shelf) {
+    this.isPreviewOpen = true;
+    this.selectedShelf = shelf;
   }
 
   private setUpFilterManager() {

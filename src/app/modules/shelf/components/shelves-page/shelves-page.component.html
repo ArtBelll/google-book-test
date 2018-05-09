@@ -14,24 +14,40 @@
     </div>
   </div>
 </div>
-<table class="table text-center">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Title</th>
-    <th scope="col">Volume count</th>
-    <th scope="col" class="d-none d-sm-table-cell">Updated</th>
-    <th scope="col" class="d-none d-md-table-cell">Created</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let shelf of shelves | paginate: {itemsPerPage: itemsPerPage, currentPage: currentPage}; let i = index">
-    <th>{{itemsPerPage * (currentPage - 1) + i + 1}}</th>
-    <td>{{shelf.title}}</td>
-    <td>{{shelf.volumeCount}}</td>
-    <td class="d-none d-sm-table-cell">{{shelf.updated | date:'short'}}</td>
-    <td class="d-none d-md-table-cell">{{shelf.created | date:'short'}}</td>
-  </tr>
-  </tbody>
-</table>
-<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+<div class="row">
+  <div *ngIf="selectedShelf" class="col-6" [ngClass]="{'d-none': !isPreviewOpen, 'd-flex': isPreviewOpen}">
+    <app-shelf-preview [shelf]="selectedShelf"></app-shelf-preview>
+  </div>
+  <div [ngClass]="{'col-12': !isPreviewOpen, 'col-6': isPreviewOpen}" class="col-12">
+    <table class="table text-center table-hover">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Volume count</th>
+        <th scope="col" [ngClass]="{'d-none': isPreviewOpen, 'd-sm-table-cell': !isPreviewOpen}" class="d-none">
+          Updated
+        </th>
+        <th scope="col" [ngClass]="{'d-none': isPreviewOpen, 'd-md-table-cell': !isPreviewOpen}" class="d-none">
+          Created
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let shelf of shelves | paginate: {itemsPerPage: itemsPerPage, currentPage: currentPage}; let i = index"
+      (click)="openPreview(shelf)">
+        <th>{{itemsPerPage * (currentPage - 1) + i + 1}}</th>
+        <td>{{shelf.title}}</td>
+        <td>{{shelf.volumeCount}}</td>
+        <td class="d-none" [ngClass]="{'d-none': isPreviewOpen, 'd-sm-table-cell': !isPreviewOpen}">
+          {{shelf.updated | date:'short'}}
+        </td>
+        <td class="d-none" [ngClass]="{'d-none': isPreviewOpen, 'd-md-table-cell': !isPreviewOpen}">
+          {{shelf.created | date:'short'}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+  </div>
+</div>

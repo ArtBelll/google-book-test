@@ -7,6 +7,7 @@ import {AsyncLimitModule} from '../../pipes/async-limit-pipe';
 import {ShelvesPageComponent} from './components/shelves-page/shelves-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ShelfPreviewComponent } from './components/shelf-preview/shelf-preview.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   declarations: [
     ShelfComponent,
     ShelvesGroupComponent,
-    ShelvesPageComponent
+    ShelvesPageComponent,
+    ShelfPreviewComponent
   ],
   providers: [
     ShelfService
