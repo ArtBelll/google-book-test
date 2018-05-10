@@ -41,7 +41,7 @@ const routes: Routes = [
         component: ShelfViewComponent
       },
       {
-        path: 'book/:id',
+        path: 'shelf/:shelfId/book/:bookId',
         component: BookViewComponent
       }
     ]

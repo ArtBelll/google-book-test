@@ -36,4 +36,8 @@ export class BookService {
         map((response: AbstractListResponse<Book>) => response.items)
       );
   }
+
+  public getBook(bookId: string): Observable<Book> {
+    return this.httpClient.get<Book>(`volumes/${bookId}`);
+  }
 }

@@ -6,10 +6,10 @@ import {Book} from '../../domain/book';
   templateUrl: './book-preview.component.html',
   styleUrls: ['./book-preview.component.css']
 })
-export class BookComponent implements OnInit {
+export class BookPreviewComponent implements OnInit {
 
   @Input() book: Book;
-  @Input() isControlButton = false;
+  @Input() shelfId;
 
   constructor() { }
 

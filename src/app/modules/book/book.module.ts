@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BookComponent } from './components/book-preview/book-preview.component';
+import { BookPreviewComponent } from './components/book-preview/book-preview.component';
 import { BookGroupComponent } from './components/book-group/book-group.component';
 import {AsyncLimitModule} from '../../pipes/async-limit-pipe';
 import {BookService} from './services/book.service';
@@ -20,7 +20,7 @@ import { BookViewComponent } from './components/book-view/book-view.component';
     RouterModule
   ],
   declarations: [
-    BookComponent,
+    BookPreviewComponent,
     BookGroupComponent,
     BooksTableComponent,
     BookViewComponent

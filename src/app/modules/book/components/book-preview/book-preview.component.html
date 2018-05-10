@@ -23,10 +23,10 @@
     <span> | </span>
     <b><a [href]='book.accessInfo.webReaderLink'>Reader</a></b>
   </div>
-  <div *ngIf="isControlButton">
-    <a [routerLink]="['/account/book', book.id]" class="btn btn-info">View</a>
+  <div *ngIf="shelfId">
+    <a [routerLink]="['/account/shelf', shelfId, 'book',book.id]" class="btn btn-info">View</a>
     <button class="btn btn-primary disabled">Edit</button>
     <button class="btn btn-danger disabled">Delete</button>
   </div>
-  <a *ngIf="!isControlButton" [href]="book.volumeInfo.previewLink || book.volumeInfo.infoLink" class="btn btn-primary">Go info</a>
+  <a *ngIf="!shelfId" [href]="book.volumeInfo.previewLink || book.volumeInfo.infoLink" class="btn btn-primary">Go info</a>
 </div>

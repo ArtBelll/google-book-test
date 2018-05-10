@@ -28,7 +28,7 @@
 <div class="row flex-column-reverse flex-sm-row">
   <div *ngIf="selectedBook" class="col-12 col-sm-6 justify-content-center"
        [ngClass]="{'d-none': !isPreviewOpen, 'd-flex': isPreviewOpen}">
-    <app-book-preview [book]="selectedBook" [isControlButton]="true"></app-book-preview>
+    <app-book-preview [book]="selectedBook" [shelfId]="shelfId"></app-book-preview>
   </div>
   <div [ngClass]="{'col-sm-6': isPreviewOpen}" class="col-12">
     <table class="table text-center table-hover">
