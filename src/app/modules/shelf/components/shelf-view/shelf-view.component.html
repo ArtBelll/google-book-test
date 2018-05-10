@@ -1,3 +1,3 @@
-<p>
-  shelf-view works!
-</p>
+<h2>{{shelf?.title}}</h2>
+<h3>Books of shelf</h3>
+<app-books-table *ngIf="shelf" [shelfId]="shelf?.id"></app-books-table>

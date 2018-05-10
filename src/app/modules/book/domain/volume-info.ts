@@ -1,9 +1,17 @@
 import {ImageLinks} from './image-link';
 
+
 export class VolumeInfo {
   title: string;
-  authors: string[];
+  description: string;
+  publisher: string;
+  publishedDate: string;
+  averageRating: number;
+  ratingsCount: number;
+  maturityRating: number;
+  previewLink: string;
+  pageCount: number;
   infoLink: string;
-  buyLink: string;
+  authors: string[];
   imageLinks: ImageLinks;
 }

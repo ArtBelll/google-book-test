@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ShelfPreviewComponent } from './components/shelf-preview/shelf-preview.component';
 import { ShelfViewComponent } from './components/shelf-view/shelf-view.component';
 import {RouterModule} from "@angular/router";
+import {BookModule} from "../book/book.module";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {RouterModule} from "@angular/router";
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    BookModule
   ],
   declarations: [
     ShelfComponent,

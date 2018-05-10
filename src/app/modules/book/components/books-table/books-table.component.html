@@ -1,0 +1,52 @@
+<!--<h3>Filters</h3>-->
+<!--<div class="row">-->
+  <!--<div class="col-6 col-md-3">-->
+    <!--<div class="form-group">-->
+      <!--<label for="title">Title</label>-->
+      <!--<input [formControl]="searchTitle" class="form-control" id="title">-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-6 col-md-3">-->
+    <!--<div class="form-group">-->
+      <!--<label for="count">Volume count</label>-->
+      <!--<input [formControl]="countMoreThanEqual" class="form-control" id="count" placeholder="More than equal">-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<div class="row">
+  <div *ngIf="selectedBook" class="col-6" [ngClass]="{'d-none': !isPreviewOpen, 'd-flex': isPreviewOpen}">
+    <app-book-preview [book]="selectedBook"></app-book-preview>
+  </div>
+  <div [ngClass]="{'col-12': !isPreviewOpen, 'col-6': isPreviewOpen}" class="col-12">
+    <table class="table text-center table-hover">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">Average rating</th>
+        <th scope="col">Ratings count</th>
+        <th scope="col">Maturity rating</th>
+        <th scope="col">Authors</th>
+        <th scope="col">Page count</th>
+        <th scope="col">Ebook</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books | paginate: {itemsPerPage: itemsPerPage, currentPage: currentPage};
+      let i = index;" (click)="openPreview(book)">
+        <th>{{itemsPerPage * (currentPage - 1) + i + 1}}</th>
+        <td>{{book.volumeInfo.title}}</td>
+        <td>{{book.volumeInfo.publisher}}</td>
+        <td>{{book.volumeInfo.averageRating}}</td>
+        <td>{{book.volumeInfo.ratingsCount}}</td>
+        <td>{{book.volumeInfo.maturityRating}}</td>
+        <td>{{book.volumeInfo.authors}}</td>
+        <td>{{book.volumeInfo.pageCount}}</td>
+        <td>{{book.saleInfo.isEbook}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+  </div>
+</div>
