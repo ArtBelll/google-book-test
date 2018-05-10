@@ -15,7 +15,7 @@ export class ShelvesPageComponent implements OnInit {
   itemsPerPage = 5;
   currentPage = 1;
 
-  searchTitle = new FormControl();
+  searchTitle = new FormControl('');
   countMoreThanEqual = new FormControl();
 
   isPreviewOpen = false;

@@ -7,12 +7,15 @@ import {BookService} from './services/book.service';
 import { BooksTableComponent } from './components/books-table/books-table.component';
 import { BookPreviewComponent } from './components/book-preview/book-preview.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     AsyncLimitModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     BookComponent,

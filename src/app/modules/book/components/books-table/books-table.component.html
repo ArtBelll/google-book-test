@@ -1,18 +1,30 @@
-<!--<h3>Filters</h3>-->
-<!--<div class="row">-->
-  <!--<div class="col-6 col-md-3">-->
-    <!--<div class="form-group">-->
-      <!--<label for="title">Title</label>-->
-      <!--<input [formControl]="searchTitle" class="form-control" id="title">-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="col-6 col-md-3">-->
-    <!--<div class="form-group">-->
-      <!--<label for="count">Volume count</label>-->
-      <!--<input [formControl]="countMoreThanEqual" class="form-control" id="count" placeholder="More than equal">-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
+<h3>Filters</h3>
+<div class="row">
+  <div class="col-6 col-md-3">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input [formControl]="searchTitle" class="form-control" id="title">
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="form-group">
+      <label for="rating">Average rating</label>
+      <input [formControl]="ratingMoreThenEqual" class="form-control" id="rating" placeholder="More than equal">
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input [formControl]="searchAuthor" class="form-control" id="author">
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="form-group">
+      <label for="isEbook">Ebook</label>
+      <input type="checkbox" [formControl]="isEbook" class="form-control w-auto" id="isEbook">
+    </div>
+  </div>
+</div>
 <div class="row">
   <div *ngIf="selectedBook" class="col-6" [ngClass]="{'d-none': !isPreviewOpen, 'd-flex': isPreviewOpen}">
     <app-book-preview [book]="selectedBook"></app-book-preview>
@@ -26,7 +38,6 @@
         <th scope="col">Publisher</th>
         <th scope="col">Average rating</th>
         <th scope="col">Ratings count</th>
-        <th scope="col">Maturity rating</th>
         <th scope="col">Authors</th>
         <th scope="col">Page count</th>
         <th scope="col">Ebook</th>
@@ -40,7 +51,6 @@
         <td>{{book.volumeInfo.publisher}}</td>
         <td>{{book.volumeInfo.averageRating}}</td>
         <td>{{book.volumeInfo.ratingsCount}}</td>
-        <td>{{book.volumeInfo.maturityRating}}</td>
         <td>{{book.volumeInfo.authors}}</td>
         <td>{{book.volumeInfo.pageCount}}</td>
         <td>{{book.saleInfo.isEbook}}</td>
