@@ -25,21 +25,22 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div *ngIf="selectedBook" class="col-6" [ngClass]="{'d-none': !isPreviewOpen, 'd-flex': isPreviewOpen}">
+<div class="row flex-column-reverse flex-sm-row">
+  <div *ngIf="selectedBook" class="col-12 col-sm-6 justify-content-center"
+       [ngClass]="{'d-none': !isPreviewOpen, 'd-flex': isPreviewOpen}">
     <app-book-preview [book]="selectedBook"></app-book-preview>
   </div>
-  <div [ngClass]="{'col-12': !isPreviewOpen, 'col-6': isPreviewOpen}" class="col-12">
+  <div [ngClass]="{'col-sm-6': isPreviewOpen}" class="col-12">
     <table class="table text-center table-hover">
       <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Title</th>
-        <th scope="col">Publisher</th>
+        <th scope="col" class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">Publisher</th>
         <th scope="col">Average rating</th>
-        <th scope="col">Ratings count</th>
-        <th scope="col">Authors</th>
-        <th scope="col">Page count</th>
+        <th scope="col" class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">Ratings count</th>
+        <th scope="col" class="d-none" [ngClass]="{'d-sm-table-cell': !isPreviewOpen}">Authors</th>
+        <th scope="col" class="d-none" [ngClass]="{'d-sm-table-cell': !isPreviewOpen}">Page count</th>
         <th scope="col">Ebook</th>
       </tr>
       </thead>
@@ -48,11 +49,13 @@
       let i = index;" (click)="openPreview(book)">
         <th>{{itemsPerPage * (currentPage - 1) + i + 1}}</th>
         <td>{{book.volumeInfo.title}}</td>
-        <td>{{book.volumeInfo.publisher}}</td>
-        <td>{{book.volumeInfo.averageRating}}</td>
+        <td class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">
+          {{book.volumeInfo.publisher}}
+        </td>
+        <td class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">{{book.volumeInfo.averageRating}}</td>
         <td>{{book.volumeInfo.ratingsCount}}</td>
-        <td>{{book.volumeInfo.authors}}</td>
-        <td>{{book.volumeInfo.pageCount}}</td>
+        <td class="d-none" [ngClass]="{'d-sm-table-cell': !isPreviewOpen}">{{book.volumeInfo.authors}}</td>
+        <td class="d-none" [ngClass]="{'d-sm-table-cell': !isPreviewOpen}">{{book.volumeInfo.pageCount}}</td>
         <td>{{book.saleInfo.isEbook}}</td>
       </tr>
       </tbody>

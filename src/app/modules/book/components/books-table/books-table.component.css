@@ -1,3 +1,7 @@
 .w-auto {
   width: auto;
 }
+
+.table-hover tbody tr {
+  cursor: pointer;
+}

@@ -14,21 +14,22 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div *ngIf="selectedShelf" class="col-6" [ngClass]="{'d-none': !isPreviewOpen, 'd-flex': isPreviewOpen}">
+<div class="row flex-column-reverse flex-sm-row">
+  <div *ngIf="selectedShelf" class="col-12 col-sm-6 justify-content-center"
+       [ngClass]="{'d-none': !isPreviewOpen, 'd-flex': isPreviewOpen}">
     <app-shelf-preview [shelf]="selectedShelf"></app-shelf-preview>
   </div>
-  <div [ngClass]="{'col-12': !isPreviewOpen, 'col-6': isPreviewOpen}" class="col-12">
+  <div [ngClass]="{'col-sm-6': isPreviewOpen}" class="col-12">
     <table class="table text-center table-hover">
       <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Title</th>
         <th scope="col">Volume count</th>
-        <th scope="col" [ngClass]="{'d-none': isPreviewOpen, 'd-sm-table-cell': !isPreviewOpen}" class="d-none">
+        <th scope="col" class="d-none" [ngClass]="{'d-sm-table-cell': !isPreviewOpen}">
           Updated
         </th>
-        <th scope="col" [ngClass]="{'d-none': isPreviewOpen, 'd-md-table-cell': !isPreviewOpen}" class="d-none">
+        <th scope="col" class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">
           Created
         </th>
       </tr>
@@ -39,10 +40,10 @@
         <th>{{itemsPerPage * (currentPage - 1) + i + 1}}</th>
         <td>{{shelf.title}}</td>
         <td>{{shelf.volumeCount}}</td>
-        <td class="d-none" [ngClass]="{'d-none': isPreviewOpen, 'd-sm-table-cell': !isPreviewOpen}">
+        <td class="d-none" [ngClass]="{'d-sm-table-cell': !isPreviewOpen}">
           {{shelf.updated | date:'short'}}
         </td>
-        <td class="d-none" [ngClass]="{'d-none': isPreviewOpen, 'd-md-table-cell': !isPreviewOpen}">
+        <td class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">
           {{shelf.created | date:'short'}}
         </td>
       </tr>

@@ -7,13 +7,13 @@
         <b>Volume count: </b><span>{{shelf.volumeCount}}</span>
       </div>
       <div>
-        <b>Created: </b><span>{{shelf.created}}</span>
+        <b>Created: </b><span>{{shelf.created | date:'short'}}</span>
       </div>
       <div>
-        <b>Updated: </b><span>{{shelf.updated}}</span>
+        <b>Updated: </b><span>{{shelf.updated | date:'short'}}</span>
       </div>
       <div>
-        <b>Volumes last updated: </b><span>{{shelf.volumesLastUpdated}}</span>
+        <b>Volumes last updated: </b><span>{{shelf.volumesLastUpdated | date:'short'}}</span>
       </div>
     </div>
     <a [routerLink]="['/account/shelf', shelf.id]" class="btn btn-info">View</a>
