@@ -28,7 +28,7 @@
 <div class="row flex-column-reverse flex-sm-row">
   <div *ngIf="selectedBook" class="col-12 col-sm-6 justify-content-center"
        [ngClass]="{'d-none': !isPreviewOpen, 'd-flex': isPreviewOpen}">
-    <app-book-preview [book]="selectedBook"></app-book-preview>
+    <app-book-preview [book]="selectedBook" [isControlButton]="true"></app-book-preview>
   </div>
   <div [ngClass]="{'col-sm-6': isPreviewOpen}" class="col-12">
     <table class="table text-center table-hover">
@@ -49,11 +49,9 @@
       let i = index;" (click)="openPreview(book)">
         <th>{{itemsPerPage * (currentPage - 1) + i + 1}}</th>
         <td>{{book.volumeInfo.title}}</td>
-        <td class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">
-          {{book.volumeInfo.publisher}}
-        </td>
-        <td class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">{{book.volumeInfo.averageRating}}</td>
-        <td>{{book.volumeInfo.ratingsCount}}</td>
+        <td class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">{{book.volumeInfo.publisher}}</td>
+        <td>{{book.volumeInfo.averageRating}}</td>
+        <td class="d-none" [ngClass]="{'d-md-table-cell': !isPreviewOpen}">{{book.volumeInfo.ratingsCount}}</td>
         <td class="d-none" [ngClass]="{'d-sm-table-cell': !isPreviewOpen}">{{book.volumeInfo.authors}}</td>
         <td class="d-none" [ngClass]="{'d-sm-table-cell': !isPreviewOpen}">{{book.volumeInfo.pageCount}}</td>
         <td>{{book.saleInfo.isEbook}}</td>

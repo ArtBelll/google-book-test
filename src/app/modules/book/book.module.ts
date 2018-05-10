@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BookComponent } from './components/book/book.component';
+import { BookComponent } from './components/book-preview/book-preview.component';
 import { BookGroupComponent } from './components/book-group/book-group.component';
 import {AsyncLimitModule} from '../../pipes/async-limit-pipe';
 import {BookService} from './services/book.service';
 import { BooksTableComponent } from './components/books-table/books-table.component';
-import { BookPreviewComponent } from './components/book-preview/book-preview.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
+import { BookViewComponent } from './components/book-view/book-view.component';
 
 @NgModule({
   imports: [
@@ -15,13 +16,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AsyncLimitModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   declarations: [
     BookComponent,
     BookGroupComponent,
     BooksTableComponent,
-    BookPreviewComponent
+    BookViewComponent
   ],
   providers: [
     BookService

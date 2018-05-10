@@ -1,6 +1,6 @@
 <h2>Recommended books</h2>
 <div class="card-deck">
   <div class="card" *ngFor="let book of books | asyncLimitTo:5 | async">
-    <app-book [book]="book"></app-book>
+    <app-book-preview [book]="book"></app-book-preview>
   </div>
 </div>

@@ -7,6 +7,7 @@ import {TokenGuard} from './guards/token.guard';
 import {WelcomComponent} from './components/account/welcom/welcom.component';
 import {ShelvesPageComponent} from "./modules/shelf/components/shelves-page/shelves-page.component";
 import {ShelfViewComponent} from "./modules/shelf/components/shelf-view/shelf-view.component";
+import {BookViewComponent} from "./modules/book/components/book-view/book-view.component";
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path: 'shelf/:id',
         component: ShelfViewComponent
+      },
+      {
+        path: 'book/:id',
+        component: BookViewComponent
       }
     ]
   }

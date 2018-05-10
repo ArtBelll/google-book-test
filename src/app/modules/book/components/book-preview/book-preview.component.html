@@ -1,3 +1,32 @@
-<p>
-  book-preview works!
-</p>
+<img class="card-img-top" [src]="book.volumeInfo.imageLinks.thumbnail" alt="Card image cap">
+<div class="card-body">
+  <h5 class="card-title">{{book.volumeInfo.title}}</h5>
+  <p class="card-text">{{book.volumeInfo.authors}}</p>
+  <div>
+    <b>Description: </b><span>{{book.volumeInfo.description}}</span>
+  </div>
+  <div>
+    <b>Publisher: </b><span>{{book.volumeInfo.publisher}}</span>
+  </div>
+  <div>
+    <b>Published date: </b><span>{{book.volumeInfo.publishedDate | date:'short'}}</span>
+  </div>
+  <div>
+    <b>Average rating: </b><span>{{book.volumeInfo.averageRating}}</span>
+    <b> Ratings count: </b><span>{{book.volumeInfo.ratingsCount}}</span>
+  </div>
+  <div>
+    <b>maturityRating: </b><span>{{book.volumeInfo.maturityRating}}</span>
+  </div>
+  <div>
+    <b><a [href]='book.saleInfo.buyLink'>Google Play</a></b>
+    <span> | </span>
+    <b><a [href]='book.accessInfo.webReaderLink'>Reader</a></b>
+  </div>
+  <div *ngIf="isControlButton">
+    <a [routerLink]="['/account/book', book.id]" class="btn btn-info">View</a>
+    <button class="btn btn-primary disabled">Edit</button>
+    <button class="btn btn-danger disabled">Delete</button>
+  </div>
+  <a *ngIf="!isControlButton" [href]="book.volumeInfo.previewLink || book.volumeInfo.infoLink" class="btn btn-primary">Go info</a>
+</div>
