@@ -13,6 +13,7 @@ export class ShelfInfoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('test');
   }
 
 }

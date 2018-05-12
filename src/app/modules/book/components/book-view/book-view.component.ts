@@ -28,7 +28,7 @@ export class BookViewComponent implements OnInit {
           this.book = book;
         });
       this.shelfService.getShelves(shelfId)
-        .subscribe(shelf => this.shelf);
+        .subscribe(shelf => this.shelf = shelf);
     });
   }
 

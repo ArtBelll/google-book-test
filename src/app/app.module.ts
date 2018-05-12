@@ -17,7 +17,6 @@ import {NgModule} from '@angular/core';
 import { WelcomComponent } from './components/account/welcom/welcom.component';
 import {BookModule} from './modules/book/book.module';
 import { NavbarComponent } from './components/account/navbar/navbar.component';
-import {RouterModule} from "@angular/router";
 
 
 @NgModule({

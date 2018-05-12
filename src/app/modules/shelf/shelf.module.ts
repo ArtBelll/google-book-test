@@ -6,12 +6,12 @@ import {AsyncLimitModule} from '../../pipes/async-limit-pipe';
 import {ShelvesPageComponent} from './components/shelves-page/shelves-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ShelfPreviewComponent } from './components/shelf-preview/shelf-preview.component';
-import { ShelfViewComponent } from './components/shelf-view/shelf-view.component';
+import {ShelfPreviewComponent} from './components/shelf-preview/shelf-preview.component';
+import {ShelfViewComponent} from './components/shelf-view/shelf-view.component';
 import {RouterModule} from "@angular/router";
 import {BookModule} from "../book/book.module";
 import {ShelfMinimalComponent} from "./components/shelf-minimal/shelf-minimal.component";
-import { ShelfInfoComponent } from './components/shelf-info/shelf-info.component';
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   imports: [
@@ -21,15 +21,15 @@ import { ShelfInfoComponent } from './components/shelf-info/shelf-info.component
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    BookModule
+    BookModule,
+    SharedModule
   ],
   declarations: [
     ShelvesGroupComponent,
     ShelfMinimalComponent,
     ShelvesPageComponent,
     ShelfPreviewComponent,
-    ShelfViewComponent,
-    ShelfInfoComponent
+    ShelfViewComponent
   ],
   providers: [
     ShelfService

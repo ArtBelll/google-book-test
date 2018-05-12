@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BookPreviewComponent } from './components/book-preview/book-preview.component';
-import { BookGroupComponent } from './components/book-group/book-group.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {BookPreviewComponent} from './components/book-preview/book-preview.component';
+import {BookGroupComponent} from './components/book-group/book-group.component';
 import {AsyncLimitModule} from '../../pipes/async-limit-pipe';
 import {BookService} from './services/book.service';
-import { BooksTableComponent } from './components/books-table/books-table.component';
+import {BooksTableComponent} from './components/books-table/books-table.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
-import { BookViewComponent } from './components/book-view/book-view.component';
-import { BookAdditionalInfoComponent } from './components/book-additional-info/book-additional-info.component';
+import {BookViewComponent} from './components/book-view/book-view.component';
+import {BookAdditionalInfoComponent} from './components/book-additional-info/book-additional-info.component';
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { BookAdditionalInfoComponent } from './components/book-additional-info/b
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   declarations: [
     BookPreviewComponent,
@@ -35,4 +37,5 @@ import { BookAdditionalInfoComponent } from './components/book-additional-info/b
     BooksTableComponent
   ]
 })
-export class BookModule { }
+export class BookModule {
+}
