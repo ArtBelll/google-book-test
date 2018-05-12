@@ -46,7 +46,7 @@ export class BooksTableComponent implements OnInit {
     const predicates: ((book: Book) => boolean)[] = [
       book => book.volumeInfo.title.toLowerCase().includes(this.searchTitle.value.toLowerCase()),
       book => this.ratingMoreThenEqual.value ? book.volumeInfo.averageRating >= this.ratingMoreThenEqual.value : true,
-      book => book.volumeInfo.authors.reduce((a1, a2) => a1 + a2)
+      book => (book.volumeInfo.authors || ['']).reduce((a1, a2) => a1 + a2)
         .toLowerCase().includes(this.searchAuthor.value.toLowerCase()),
       book => this.isEbook.value ? book.saleInfo.isEbook === this.isEbook.value : true
     ];

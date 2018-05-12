@@ -1,3 +1,6 @@
-<p>
-  book-view works!
-</p>
+<h2>{{book?.volumeInfo.title}}</h2>
+<img class="mb-4" *ngIf="book" [src]="book.volumeInfo.imageLinks.small || book.volumeInfo.imageLinks.thumbnail">
+<div class="mb-4">
+  <app-book-additional-info *ngIf="book" [book]="book"></app-book-additional-info>
+</div>
+<app-book-group [groupName]="'Recommended books'"></app-book-group>

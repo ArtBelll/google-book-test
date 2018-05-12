@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ShelfService} from './services/shelf.service';
-import {ShelfComponent} from './components/shelf/shelf.component';
 import {ShelvesGroupComponent} from './components/shelves-group/shelves-group.component';
 import {AsyncLimitModule} from '../../pipes/async-limit-pipe';
 import {ShelvesPageComponent} from './components/shelves-page/shelves-page.component';
@@ -11,6 +10,8 @@ import { ShelfPreviewComponent } from './components/shelf-preview/shelf-preview.
 import { ShelfViewComponent } from './components/shelf-view/shelf-view.component';
 import {RouterModule} from "@angular/router";
 import {BookModule} from "../book/book.module";
+import {ShelfMinimalComponent} from "./components/shelf-minimal/shelf-minimal.component";
+import { ShelfInfoComponent } from './components/shelf-info/shelf-info.component';
 
 @NgModule({
   imports: [
@@ -23,11 +24,12 @@ import {BookModule} from "../book/book.module";
     BookModule
   ],
   declarations: [
-    ShelfComponent,
     ShelvesGroupComponent,
+    ShelfMinimalComponent,
     ShelvesPageComponent,
     ShelfPreviewComponent,
-    ShelfViewComponent
+    ShelfViewComponent,
+    ShelfInfoComponent
   ],
   providers: [
     ShelfService

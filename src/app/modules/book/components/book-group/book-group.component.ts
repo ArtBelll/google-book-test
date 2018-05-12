@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Book} from '../../domain/book';
 import {BookService} from '../../services/book.service';
@@ -10,6 +10,7 @@ import {BookService} from '../../services/book.service';
 })
 export class BookGroupComponent implements OnInit {
 
+  @Input() groupName: string;
   books: Observable<Book[]>;
 
   constructor(private bookService: BookService) {

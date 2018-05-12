@@ -2,26 +2,8 @@
 <div class="card-body">
   <h5 class="card-title">{{book.volumeInfo.title}}</h5>
   <p class="card-text">{{book.volumeInfo.authors}}</p>
-  <div>
-    <b>Description: </b><span>{{book.volumeInfo.description}}</span>
-  </div>
-  <div>
-    <b>Publisher: </b><span>{{book.volumeInfo.publisher}}</span>
-  </div>
-  <div>
-    <b>Published date: </b><span>{{book.volumeInfo.publishedDate | date:'short'}}</span>
-  </div>
-  <div>
-    <b>Average rating: </b><span>{{book.volumeInfo.averageRating}}</span>
-    <b> Ratings count: </b><span>{{book.volumeInfo.ratingsCount}}</span>
-  </div>
-  <div>
-    <b>maturityRating: </b><span>{{book.volumeInfo.maturityRating}}</span>
-  </div>
-  <div>
-    <b><a [href]='book.saleInfo.buyLink'>Google Play</a></b>
-    <span> | </span>
-    <b><a [href]='book.accessInfo.webReaderLink'>Reader</a></b>
+  <div *ngIf="shelfId" class="mb-4">
+    <app-book-additional-info [book]="book"></app-book-additional-info>
   </div>
   <div *ngIf="shelfId">
     <a [routerLink]="['/account/shelf', shelfId, 'book',book.id]" class="btn btn-info">View</a>

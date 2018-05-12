@@ -1,0 +1,4 @@
+.list-group-item-action:hover {
+  background: #999;
+  cursor: pointer;
+}

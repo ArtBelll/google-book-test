@@ -9,6 +9,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { BookViewComponent } from './components/book-view/book-view.component';
+import { BookAdditionalInfoComponent } from './components/book-additional-info/book-additional-info.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { BookViewComponent } from './components/book-view/book-view.component';
     BookPreviewComponent,
     BookGroupComponent,
     BooksTableComponent,
-    BookViewComponent
+    BookViewComponent,
+    BookAdditionalInfoComponent
   ],
   providers: [
     BookService
