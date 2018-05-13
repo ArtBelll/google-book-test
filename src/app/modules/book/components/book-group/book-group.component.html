@@ -1,6 +1,0 @@
-<h2>{{groupName}}</h2>
-<div class="card-deck">
-  <div class="card" *ngFor="let book of books | asyncLimitTo:5 | async">
-    <app-book-preview [book]="book"></app-book-preview>
-  </div>
-</div>

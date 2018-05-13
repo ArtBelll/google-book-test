@@ -1,8 +1,0 @@
-<h2>{{book?.volumeInfo.title}}</h2>
-<img class="mb-4" *ngIf="book" [src]="book.volumeInfo.imageLinks.small || book.volumeInfo.imageLinks.thumbnail">
-<div class="mb-4">
-  <app-book-additional-info *ngIf="book" [book]="book"></app-book-additional-info>
-</div>
-<h2>Shelf</h2>
-<app-shelf-info *ngIf="shelf" [shelf]="shelf"></app-shelf-info>
-<app-book-group [groupName]="'Recommended books'"></app-book-group>
