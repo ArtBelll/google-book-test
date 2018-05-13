@@ -16,9 +16,13 @@ export class ShelfPreviewComponent implements OnChanges {
   }
 
   ngOnChanges() {
-    this.bookService.getBooksByShelfAndMax(this.shelf.id, 1)
-      .subscribe(book => {
-        this.bookImage = book ? book[0].volumeInfo.imageLinks.thumbnail : null;
-      });
+    if (this.shelf.id) {
+      this.bookService.getBooksByShelfAndMax(this.shelf.id, 1)
+        .subscribe(book => {
+          this.bookImage = book ? book[0].volumeInfo.imageLinks.thumbnail : null;
+        });
+    } else {
+      this.bookImage = null;
+    }
   }
 }

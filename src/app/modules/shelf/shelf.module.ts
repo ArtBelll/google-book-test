@@ -12,6 +12,8 @@ import {RouterModule} from "@angular/router";
 import {BookModule} from "../book/book.module";
 import {ShelfMinimalComponent} from "./components/shelf-minimal/shelf-minimal.component";
 import {SharedModule} from "../shared/shared.module";
+import {ModalDialogModule} from "ngx-modal-dialog";
+import { ShelfAdderComponent } from './components/shelf-adder/shelf-adder.component';
 
 @NgModule({
   imports: [
@@ -22,21 +24,24 @@ import {SharedModule} from "../shared/shared.module";
     ReactiveFormsModule,
     RouterModule,
     BookModule,
-    SharedModule
+    SharedModule,
+    ModalDialogModule.forRoot()
   ],
   declarations: [
     ShelvesGroupComponent,
     ShelfMinimalComponent,
     ShelvesPageComponent,
     ShelfPreviewComponent,
-    ShelfViewComponent
+    ShelfViewComponent,
+    ShelfAdderComponent
   ],
   providers: [
     ShelfService
   ],
   exports: [
     ShelvesGroupComponent
-  ]
+  ],
+  entryComponents: [ShelfAdderComponent]
 })
 export class ShelfModule {
 }

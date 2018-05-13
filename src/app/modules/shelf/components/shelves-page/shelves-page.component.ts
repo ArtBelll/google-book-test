@@ -1,8 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {Shelf} from '../../domian/shelf';
 import {ShelfService} from '../../services/shelf.service';
 import {FormControl} from '@angular/forms';
 import {FilterManager} from '../../../../filter-manager';
+import {ModalDialogService, SimpleModalComponent} from "ngx-modal-dialog";
+import {ShelfAdderComponent} from "../shelf-adder/shelf-adder.component";
+import {Subject} from "rxjs/Subject";
 
 @Component({
   selector: 'app-shelves-page',
@@ -21,7 +24,9 @@ export class ShelvesPageComponent implements OnInit {
   isPreviewOpen = false;
   selectedShelf: Shelf;
 
-  constructor(private shelfService: ShelfService) {
+  constructor(private shelfService: ShelfService,
+              private modalService: ModalDialogService,
+              private viewRef: ViewContainerRef) {
   }
 
   ngOnInit() {
@@ -47,6 +52,14 @@ export class ShelvesPageComponent implements OnInit {
     const filterManager = new FilterManager<Shelf>(controls, predicates, this.shelves);
     filterManager.changeFilterSub(shelves => {
       this.shelves = shelves;
+    });
+  }
+
+  openDialog() {
+    this.modalService.openDialog(this.viewRef, {
+      title: 'Add modal',
+      childComponent: ShelfAdderComponent,
+      data: this.shelves
     });
   }
 }

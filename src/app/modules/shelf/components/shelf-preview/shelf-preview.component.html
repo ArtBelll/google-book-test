@@ -1,8 +1,10 @@
 <div class="card">
   <img class="card-img-top" *ngIf="bookImage" [src]="bookImage">
   <div class="card-body">
+    <p *ngIf="!shelf.id" class="text-danger">Fictitious shelf</p>
     <app-shelf-info *ngIf="shelf" [shelf]="shelf"></app-shelf-info>
-    <a [routerLink]="['/account/shelf', shelf.id]" class="btn btn-info">View</a>
+    <a [routerLink]="['/account/shelf', shelf.id]" class="btn btn-info"
+       [ngClass]="{'disabled': !shelf.id}">View</a>
     <button class="btn btn-primary disabled">Edit</button>
     <button class="btn btn-danger disabled">Delete</button>
   </div>
