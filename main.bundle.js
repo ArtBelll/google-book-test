@@ -1431,7 +1431,7 @@ module.exports = ""
 /***/ "./src/app/modules/shelf/components/shelf-view/shelf-view.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>{{shelf?.title}}</h2>\n<app-books-table *ngIf=\"shelf\" [shelfId]=\"shelf?.id\"></app-books-table>\n"
+module.exports = "<app-shelf-info *ngIf=\"shelf\" [shelf]=\"shelf\"></app-shelf-info>\n<app-books-table *ngIf=\"shelf\" [shelfId]=\"shelf?.id\"></app-books-table>\n"
 
 /***/ }),
 
