@@ -1,2 +1,2 @@
-<h2>{{shelf?.title}}</h2>
+<app-shelf-info *ngIf="shelf" [shelf]="shelf"></app-shelf-info>
 <app-books-table *ngIf="shelf" [shelfId]="shelf?.id"></app-books-table>
